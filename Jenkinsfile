@@ -2,12 +2,12 @@ pipeline
 {
     agent any
     stages {
-        stage(reports)
-{
-    steps {
-        sh 'mkdir coverage'
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/site/munit/coverage', reportFiles: 'summary.html', reportName: 'HTML Report', reportTitles: ''])
+       
+   stage('MUnit Test Report') {
+        script {   	
+       	echo "Publish MUnit Test report"
+       	publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'MUnitTests', reportFiles: 'summary.html', reportName: 'MUnit Test Report', reportTitles: 'MUnit Test Coverage Report'])         
+        }
     }
-}
     }
 }
