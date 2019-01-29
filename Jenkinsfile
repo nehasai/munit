@@ -6,6 +6,7 @@ pipeline
    stage('MUnit Test Report') {
        steps {
         script {   
+		sh 'mvn clean test'
            	fileOperations([
 	   	    folderCreateOperation(
 		            folderPath: 'MUnitTests'),
