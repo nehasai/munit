@@ -5,7 +5,7 @@ pipeline
         stage(reports)
 {
     steps {
-        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'coverage', reportFiles: 'summary.html', reportName: 'HTML Report', reportTitles: ''])
+        publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'target/site/munit/coverage', reportFiles: 'summary.html', reportName: 'HTML Report', reportTitles: ''])
     }
 }
     }
