@@ -4,10 +4,12 @@ pipeline
     stages {
        
    stage('MUnit Test Report') {
+       steps {
         script {   	
        	echo "Publish MUnit Test report"
        	publishHTML(target: [allowMissing: false, alwaysLinkToLastBuild: false, keepAll: true, reportDir: 'MUnitTests', reportFiles: 'summary.html', reportName: 'MUnit Test Report', reportTitles: 'MUnit Test Coverage Report'])         
         }
+       }
     }
     }
 }
