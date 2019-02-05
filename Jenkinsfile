@@ -1,7 +1,5 @@
 pipeline {
     agent any
-    parameter { string(defaultValue: '75', description: 'sample test coverage', name: 'MUnit Test Report', trim: true)
-    }
     stages {
         stage('test') {
                steps {
